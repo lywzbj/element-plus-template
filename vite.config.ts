@@ -11,4 +11,15 @@ export default defineConfig({
       "@": path.resolve(__dirname,'src')
     }
   },
+  // 配置跨域
+  server: {
+    host: '0.0.0.0',
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:8080/',
+        changeOrigin: true
+      },
+    }
+
+  }
 })

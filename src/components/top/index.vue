@@ -3,19 +3,11 @@
     <div class="content">
       <div class="left" >
         <img class="log" src="@/assets/vue.svg" alt="加载中"/>
-        <p>xxxxxx</p>
-
-        <div class="menu">
-          <el-menu
-              :default-active="1"
-              mode="horizontal"
-          >
-            <el-menu-item index="1">主页</el-menu-item>
-            <el-menu-item index="2" >项目</el-menu-item>
-            <el-menu-item index="3" >清单</el-menu-item>
-          </el-menu>
-        </div>
-
+        <p>礼金管理</p>
+        <ul class="menu">
+          <li :class="currentIndex === 0 ? 'active' : ''"  @click="setIndex(0,'/project')">礼金项目</li>
+          <li :class="currentIndex === 1 ? 'active' : ''"  @click="setIndex(1,'/item')">礼金明细</li>
+        </ul>
       </div>
 
 
@@ -23,13 +15,21 @@
       <div class="right">
         <p class="help">个人中心</p>
         <p class="login">注销</p>
-      </div>
+      </div>`
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import {ref} from "vue";
+import {useRouter} from "vue-router";
+let currentIndex = ref<number>(0)
+let $router = useRouter();
 
+const setIndex = (index:number,path:string) => {
+  $router.push({path: path})
+  currentIndex.value = index;
+}
 
 
 
@@ -68,6 +68,17 @@
       .menu {
         width: 280px;
         margin-left: 20px;
+        display: flex;
+        li {
+          margin-left: 10px;
+          color: #55a6fe;
+        }
+        li:active {
+          border-bottom: solid 1px cadetblue;
+        }
+        .active {
+          border-bottom: solid 1px cadetblue;
+        }
       }
     }
 

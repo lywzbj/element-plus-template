@@ -12,6 +12,16 @@ export default createRouter({
             // @ts-ignore
             component: () => import('@/pages/home/index.vue')
         },
+        {
+            path: '/project',
+            // @ts-ignore
+            component: () => import('@/pages/project/index.vue')
+        },
+        {
+            path: '/item',
+            // @ts-ignore
+            component: () => import('@/pages/item/index.vue')
+        },
 
     ],
     // 滚动行为控制: 控制滚动条的位置
