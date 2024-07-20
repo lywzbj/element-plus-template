@@ -5,8 +5,9 @@
         <img class="log" src="@/assets/vue.svg" alt="加载中"/>
         <p>礼金管理</p>
         <ul class="menu">
-          <li :class="currentIndex === 0 ? 'active' : ''"  @click="setIndex(0,'/project')">礼金项目</li>
-          <li :class="currentIndex === 1 ? 'active' : ''"  @click="setIndex(1,'/item')">礼金明细</li>
+          <li :class="currentIndex === 0 ? 'active' : ''"  @click="setIndex(0,'/')">主页</li>
+          <li :class="currentIndex === 1 ? 'active' : ''"  @click="setIndex(1,'/project')">礼金项目</li>
+          <li :class="currentIndex === 2 ? 'active' : ''"  @click="setIndex(2,'/item')">礼金明细</li>
         </ul>
       </div>
 

@@ -10,6 +10,11 @@ export default createRouter({
         {
             path: '/',
             // @ts-ignore
+            redirect: '/index'
+        },
+        {
+            path: '/index',
+            // @ts-ignore
             component: () => import('@/pages/home/index.vue')
         },
         {

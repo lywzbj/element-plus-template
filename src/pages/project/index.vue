@@ -36,39 +36,39 @@
 
       <el-pagination layout="prev, pager, next" :total="total"  :default-page-size="20"  @current-change="pageChange" :hide-on-single-page="true"  />
 
-
-      <el-dialog
-          v-model="dialogVisible"
-          :title="title"
-          @close="closeAndClearInput()"
-          width="500"
-      >
-
-        <el-form
-            label-width="auto"
-            ref="ruleFormRef"
-            :rules="rules"
-            style="max-width: 600px"
-            :model="projectInput"
-        >
-          <el-form-item label="项目名称" prop="name">
-            <el-input v-model="projectInput.name" />
-          </el-form-item>
-          <el-form-item label="项目日期"  prop="projectDate">
-            <el-date-picker type="date"  format="YYYY-MM-DD" value-format="YYYY-MM-DD" v-model="projectInput.projectDate" />
-          </el-form-item>
-        </el-form>
-        <template #footer>
-          <div class="dialog-footer">
-            <el-button @click="dialogVisible = false">取消</el-button>
-            <el-button type="primary"  @click="submitForm(ruleFormRef)">
-              提交
-            </el-button>
-          </div>
-        </template>
-      </el-dialog>
-
     </div>
+
+    <el-dialog
+        v-model="dialogVisible"
+        :title="title"
+        @close="closeAndClearInput()"
+        width="500"
+    >
+
+      <el-form
+          label-width="auto"
+          ref="ruleFormRef"
+          :rules="rules"
+          style="max-width: 600px"
+          :model="projectInput"
+      >
+        <el-form-item label="项目名称" prop="name">
+          <el-input v-model="projectInput.name" />
+        </el-form-item>
+        <el-form-item label="项目日期"  prop="projectDate">
+          <el-date-picker type="date"  format="YYYY-MM-DD" value-format="YYYY-MM-DD" v-model="projectInput.projectDate" />
+        </el-form-item>
+      </el-form>
+      <template #footer>
+        <div class="dialog-footer">
+          <el-button @click="dialogVisible = false">取消</el-button>
+          <el-button type="primary"  @click="submitForm(ruleFormRef)">
+            提交
+          </el-button>
+        </div>
+      </template>
+    </el-dialog>
+
 
   </div>
 </template>

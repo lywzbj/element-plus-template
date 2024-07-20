@@ -26,10 +26,17 @@ export interface PageInput {
 
     pageSize:number;
 
+}
 
+export interface SelectDTO {
+
+    key:string,
+
+    value:string
 
 
 }
+
 
 
 
